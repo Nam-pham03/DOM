@@ -1,0 +1,62 @@
+<app-auth-layout>
+  <div class="w-full max-w-md p-8">
+    <a href="#" class="text-sm text-indigo-600 hover:underline">< Back to dashboard</a>
+    <h2 class="mt-4 text-3xl font-bold">Sign In</h2>
+    <p class="mt-2 text-gray-600">Enter your email & password to sign in.</p>
+
+    <div class="mt-6 flex space-x-4">
+      <button class="flex-1 flex items-center justify-center py-2 border border-gray-300 rounded-lg hover:bg-gray-100">
+        <img src="https://www.google.com/favicon.ico" class="h-5 w-5 mr-2" alt="Google">
+        Sign in with Google
+      </button>
+      <button class="flex-1 flex items-center justify-center py-2 border border-gray-300 rounded-lg hover:bg-gray-100">
+        <a href="https://www.microsoft.com" class="flex items-center text-gray-700 hover:text-black">
+          <svg class="h-5 w-5 mr-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="10" height="10" fill="#F25022"/>
+            <rect x="13" y="1" width="10" height="10" fill="#7FBA00"/>
+            <rect x="1" y="13" width="10" height="10" fill="#00A4EF"/>
+            <rect x="13" y="13" width="10" height="10" fill="#FFB900"/>
+          </svg>
+
+        </a>
+
+        Sign in with FeId
+      </button>
+    </div>
+
+    <div class="mt-6 text-center">
+      <span class="text-gray-500">Or</span>
+    </div>
+
+    <form class="mt-6 space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email *</label>
+        <input type="email" placeholder="Enter your email" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" [(ngModel)]="email" name="email" required>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Password *</label>
+        <div class="relative">
+          <input [type]="showPassword ? 'text' : 'password'" placeholder="Enter your password" class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500" [(ngModel)]="password" name="password" required>
+          <button type="button" (click)="showPassword = !showPassword" class="absolute inset-y-0 right-0 pr-3 flex items-center">
+            <svg class="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <input type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" [(ngModel)]="keepLoggedIn" name="keepLoggedIn">
+          <label class="ml-2 text-sm text-gray-600">Keep me logged in</label>
+        </div>
+        <a href="#" class="text-sm text-indigo-600 hover:underline">Forgot password?</a>
+      </div>
+      <button type="submit" class="w-full py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700" style="background-color: #F36F21">Sign In</button>
+    </form>
+
+    <p class="mt-4 text-center text-sm text-gray-600">
+      Don’t have an account? <a routerLink="/sign-up" class="text-indigo-600 hover:underline">Sign Up</a>
+    </p>
+  </div>
+</app-auth-layout>
